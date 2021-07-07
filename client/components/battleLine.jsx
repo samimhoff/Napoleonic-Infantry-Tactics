@@ -1,59 +1,142 @@
 import React, {useState, useEffect} from 'react';
 import Anime from 'react-anime';
-const BattleLine = () => {
 
-  const generateCompany = (column, rower) => {
+const styles = {
+  square: {
+    width: '6px',
+    height: '9px',
+    color: 'steelblue',
+    float: 'left',
+    textAlign: 'center',
+    margin: '0 auto',
+    backgroundColor: 'steelblue',
+    margin: '1px'
+  },
+  grenadier: {
+    width: '4px',
+    height: '7px',
+    color: 'steelblue',
+    float: 'left',
+    textAlign: 'center',
+    margin: '0 auto',
+    backgroundColor: 'steelblue',
+    margin: '1px',
+    border: '1px solid red'
+  },
+  fusilier: {
+    width: '4px',
+    height: '7px',
+    color: 'steelblue',
+    float: 'left',
+    textAlign: 'center',
+    margin: '0 auto',
+    backgroundColor: 'steelblue',
+    margin: '1px',
+    border: '1px solid teal'
+  }
+}
+
+
+const BattleLine = () => {
+  const generateCompany = (column, rower, styler) => {
+    console.log('GENERATION!');
     const grid = [column, rower];
     const col = grid[0];
     const row = grid[1];
     const numberOfSoldiers = col * row;
-    for (let i = 0; i < numberOfSoldiers.length; i++) {
-      return <div key={i * col} style={styles.square}></div>
+    console.log(numberOfSoldiers);
+    var soldiersArr = [];
+    for (let i = 0; i < numberOfSoldiers; i++) {
+      soldiersArr.push(<div key={i * col} style={styles[styler]}></div>);
     }
+    return soldiersArr;
   }
 
   return (
-    <Anime style={{display: 'inline-block'}}translateY={[0, 25]}>
-      <div style={{width: '80%', margin: '0 auto'}}>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-      </div>
-      <div style={{width: '80%', clear: 'both', margin: '0 auto'}}>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-        <div style={styles.square}></div>
-      </div>
-    </Anime>
+    <div style={{display: "block", margin: '0 auto', width: '98%'}}>
+      <div style={{display: "inline", margin: '0 auto'}}>
+        <Anime translateY={[0, 25]  }>
+          <div style={{display: 'inline', float: "left", margin: '10px'}}>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'fusilier')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'fusilier')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'fusilier')}
+            </div>
+          </div>
+        </Anime>
+        <Anime translateY={[0, 25]  }>
+          <div style={{display: 'inline', float: "left", margin: '10px'}}>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+            {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+            {generateCompany(1, 33, 'square')}
+            </div>
+          </div>
+        </Anime>
+        <Anime translateY={[0, 25]  }>
+          <div style={{display: 'inline', float: "left", margin: '10px'}}>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+            {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+            {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+            {generateCompany(1, 33, 'square')}
+            </div>
+          </div>
+        </Anime>
+        <Anime translateY={[0, 25]  }>
+          <div style={{display: 'inline', float: "left", margin: '10px'}}>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'square')}
+            </div>
+          </div>
+        </Anime>
+        <Anime translateY={[0, 25]  }>
+          <div style={{display: 'inline', float: "left", margin: '10px'}}>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'square')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'square')}
+            </div>
+          </div>
+        </Anime>
+        <Anime translateY={[0, 25]  }>
+          <div style={{display: 'inline', float: "left", margin: '10px'}}>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'grenadier')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'grenadier')}
+            </div>
+            <div style={{clear: 'both', margin: '0 auto'}}>
+              {generateCompany(1, 33, 'grenadier')}
+            </div>
+          </div>
+        </Anime>
+    </div>
+  </div>
 
   )
-}
-const styles = {
-  square: {
-    width: '25px',
-    height: '25px',
-    color: 'steelblue',
-    float: 'left',
-    textAlign: 'center',
-    margin: '0 auto',
-    backgroundColor: 'steelblue',
-    margin: '5px'
-  },
-  grenadier: {
-    width: '25px',
-    height: '25px',
-    color: 'steelblue',
-    border: '2px solid red',
-    float: 'left',
-    textAlign: 'center',
-    margin: '0 auto',
-    backgroundColor: 'steelblue',
-    margin: '5px'
-  }
 }
 
 export default BattleLine;

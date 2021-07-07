@@ -7,7 +7,7 @@ import BattleLine from './components/BattleLine.jsx'
 
 const HelloWorld = () => {
     return (
-        <div style={{}}>
+        <div style={{width: '98%', margin: '0 auto'}}>
             <h1>Napoleonic Infantry Tactics</h1>
             <p>This website's purpose is to educate the user about Infantry tactics in the Napoleonic era of warfare.</p>
             <BattleLine />

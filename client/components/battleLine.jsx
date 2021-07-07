@@ -53,7 +53,7 @@ const BattleLine = () => {
   }
 
   return (
-    <div style={{display: "block", margin: '0 auto', width: '98%'}}>
+    <div style={{display: "block", margin: '0 auto'}}>
       <div style={{display: "inline", margin: '0 auto'}}>
         <Anime translateY={[0, 25]  }>
           <div style={{display: 'inline', float: "left", margin: '10px'}}>

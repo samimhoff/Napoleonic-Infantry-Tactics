@@ -37,7 +37,7 @@ const styles = {
 }
 
 
-const BattleLine = () => {
+const Square = () => {
   const generateCompany = (column, rower, styler) => {
     console.log('GENERATION!');
     const grid = [column, rower];
@@ -71,7 +71,7 @@ const BattleLine = () => {
             {/* <div key={'lighte'} style={styles['fusilier']}>Fusiler</div> */}
           </div>
         </Anime>
-        <Anime translateY={[0, 25]  }>
+        <Anime rotateX={[0, 90]}translateY={[0, 25]  }>
           <div style={{display: 'inline', float: "left", margin: '10px'}}>
             <div style={{clear: 'both', margin: '0 auto'}}>
               {generateCompany(1, 33, 'square')}
@@ -150,6 +150,10 @@ const BattleLine = () => {
       </div>
     </div>
   )
+
+
+
+
 }
 
-export default BattleLine;
+export default Square;

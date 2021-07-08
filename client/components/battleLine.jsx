@@ -33,6 +33,17 @@ const styles = {
     backgroundColor: 'steelblue',
     margin: '1px',
     border: '1px solid teal'
+  },
+  enemy: {
+    backgroundColor: '#C9CCCF',
+    color: 'black',
+    border: '2px solid black',
+    width: '95%',
+    margin: '0 auto',
+    height: '30px',
+    fontSize: '22px',
+    textShadow: '1px 2px #FECB00',
+    boxShadow: '1px 2px #FECB00'
   }
 }
 

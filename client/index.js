@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import BattleLine from './components/BattleLine.jsx';
 import Square from './components/Square.jsx';
 import Quote from './components/Quote.jsx';
+import Divisions from './components/Divisions.jsx';
 import './reactStyles.css';
 
 
@@ -37,7 +38,7 @@ const styles = {
 
 
 const HelloWorld = () => {
-  const [formation, setFormation] = useState('battleLine');
+  const [formation, setFormation] = useState('column');
 
   const handleChange = (event) => {
     setFormation(event.target.value);
@@ -67,6 +68,10 @@ const HelloWorld = () => {
             <div>
               {formation === "battleLine" ? <BattleLine /> : <div></div>}
               {formation === "square" ? <Square /> : <div></div>}
+              {formation === "column" ? <Divisions /> : <div></div>}
+            </div>
+            <div style={{clear: 'both'}}>
+
             </div>
             <br></br>
             <br></br>
